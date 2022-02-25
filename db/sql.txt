@@ -1,0 +1,22 @@
+DROP TABLE IF EXISTS tbl_elements;
+CREATE TABLE tbl_elements (
+  framewrk varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  kode varchar(20) NOT NULL,
+  script_html text NOT NULL,
+  script_css text,
+  script_js text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+DROP TABLE IF EXISTS tbl_menu;
+CREATE TABLE tbl_menu (
+  kode varchar(20) NOT NULL,
+  kategori varchar(20) NOT NULL,
+  icon varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+ALTER TABLE tbl_menu
+  ADD PRIMARY KEY (kode);
+
+ALTER TABLE tbl_elements
+  ADD PRIMARY KEY (framewrk,kode);
